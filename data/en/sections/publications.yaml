@@ -1,0 +1,67 @@
+# section information
+section:
+  name: Publications
+  id: publications
+  enable: true
+  weight: 6
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: "Manybody Physics"
+  filter: "manybody-physics"
+- name: "Quantum Dynamics"
+  filter: "quantum-dynamics"
+- name: "Quantum Circuits"
+  filter: "quantum-circuits"
+
+# your publications
+publications:
+- title: Fast Sideband Control of a Weakly Coupled Multimode Bosonic Memory
+  publishedIn:
+    name: "In Review"
+    date: March 13, 2025
+    url: https://arxiv.org/abs/2503.10623
+  authors:
+  - name: Jordan Huang
+  - name: Thomas J. DiNapoli
+  - name: Gavin Rockwood
+  - name: Ming Yuan
+  - name: Prathyankara Narasimhan
+  - name: Eesh Gupta
+  - name: Mustafa Bal
+  - name: Francesco Crisa
+  - name: Sabrina Garattoni
+  - name: Yao Lu
+  - name: Liang Jiang
+  - name: Srivatsan Chakram
+  paper:
+    summary: Demonstrating multimode control!
+  categories: ["quantum-circuits", "quantum-dynamics"]
+  tags: ["quantum-circuits", "quantum-dynamics"]
+- title: Entanglement Hamiltonians for periodic free fermion chains with defects
+  publishedIn:
+    name: "Journal of Statistical Mechanics: Theory and Experiment"
+    date: July 1, 2025
+    url: https://iopscience.iop.org/article/10.1088/1742-5468/ade2ec
+  authors:
+  - name: Gavin Rockwood
+  paper:
+    summary: High precision entanglement Hamiltonian calculations using free fermions.
+  categories: ["manybody-physics"]
+  tags: ["manybody-physics"]
+- title: Replicated entanglement negativity for disjoint intervals in the Ising conformal field theory
+  publishedIn:
+    name: "Journal of Statistical Mechanics: Theory and Experiment"
+    date: August 30, 2022
+    url: https://iopscience.iop.org/article/10.1088/1742-5468/ac873f
+  authors:
+  - name: Gavin Rockwood
+  paper:
+    summary: Calculating N-partite entanglemnet negativity using replicas. 
+  categories: ["manybody-physics"]
+  tags: ["manybody-physics"]

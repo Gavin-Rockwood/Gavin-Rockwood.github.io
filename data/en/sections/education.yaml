@@ -1,0 +1,48 @@
+# section information
+section:
+  name: Education
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+# - name: Ph.D in Quantum Cryptography
+#   icon: fa-microscope
+#   timeframe: 2016-2020
+#   institution:
+#     name: ABC University of Technology
+#     url: "#"
+#     logo: /images/sections/education/tech_college.png
+#     # Can optionally show a different logo for dark theme
+#     # darkLogo: /images/sections/education/tech_college.png
+#   grade: #(optional)
+#     scale: CGPA
+#     achieved: 3.6
+#     outOf: 4
+#   publications: #(optional)
+#   - title: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#     url: "#"
+#   - title: Fusce eu augue ut odio porttitor pulvinar.
+#     url: "#"
+#   - title: Nullam vitae orci tincidunt purus viverra pulvinar.
+#     url: "#"
+- name: Ph.D. in Physics
+  icon: fa-microscope
+  timeframe: 2019-2025
+  institution:
+    name: Rutgers University
+    url: "#"
+    logo: /images/sections/education/Rutgers_Scarlet_Knights_logo.svg.png
+- name: B.Sc. in Astrophysics
+  icon: fa-graduation-cap
+  timeframe: 2015-2019
+  institution:
+    name: University of California Santa Cruz
+    url: "#"
+    logo: /images/sections/education/ucsc-slug-logo.png
+    # Can optionally show a different logo for dark theme
+    # darkLogo: /images/sections/education/university.jpg
