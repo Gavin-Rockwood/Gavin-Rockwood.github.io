@@ -186,8 +186,6 @@
   </url><url>
     <loc>http://localhost:1313/notes/_index.bn/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/_index.bn/</loc>
-  </url><url>
     <loc>http://localhost:1313/notes/bash/_index.bn/</loc>
   </url>
 </urlset>
