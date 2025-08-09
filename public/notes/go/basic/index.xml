@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Basics on Gavin Rockwood</title>
-    <link>http://localhost:1313/notes/go/basic/</link>
+    <link>https://hugo-toha.github.io/notes/go/basic/</link>
     <description>Recent content in Basics on Gavin Rockwood</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://localhost:1313/notes/go/basic/index.xml" rel="self" type="application/rss+xml" /><item>
+    <language>en</language><atom:link href="https://hugo-toha.github.io/notes/go/basic/index.xml" rel="self" type="application/rss+xml" /><item>
       <title>Go বেসিক</title>
-      <link>http://localhost:1313/notes/go/basic/_index.bn/</link>
+      <link>https://hugo-toha.github.io/notes/go/basic/_index.bn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/go/basic/_index.bn/</guid>
+      <guid>https://hugo-toha.github.io/notes/go/basic/_index.bn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction</title>
-      <link>http://localhost:1313/notes/go/basic/introduction/</link>
+      <link>https://hugo-toha.github.io/notes/go/basic/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/go/basic/introduction/</guid>
+      <guid>https://hugo-toha.github.io/notes/go/basic/introduction/</guid>
       <description>&lt;!-- A Sample Program --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -84,10 +84,10 @@
     
     <item>
       <title>Basic Types</title>
-      <link>http://localhost:1313/notes/go/basic/types/</link>
+      <link>https://hugo-toha.github.io/notes/go/basic/types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/go/basic/types/</guid>
+      <guid>https://hugo-toha.github.io/notes/go/basic/types/</guid>
       <description>&lt;!-- String Type --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -157,10 +157,10 @@
     
     <item>
       <title>Flow Control</title>
-      <link>http://localhost:1313/notes/go/basic/flow-control/</link>
+      <link>https://hugo-toha.github.io/notes/go/basic/flow-control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/notes/go/basic/flow-control/</guid>
+      <guid>https://hugo-toha.github.io/notes/go/basic/flow-control/</guid>
       <description>&lt;!-- Condition --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
