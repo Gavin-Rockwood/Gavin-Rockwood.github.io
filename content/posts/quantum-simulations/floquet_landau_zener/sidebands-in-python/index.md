@@ -17,6 +17,7 @@ tags:
 categories:
 - Code Examples
 ---
+This post demonstrates how to calibrate sideband gates in Python using the Floquet-Landau-Zener (FLZ) physics. The code is designed to be run in a Jupyter Notebook or as a standalone Python script. It uses the `scqubits` and `qutip` libraries to simulate the dynamics of a superconducting circuit and analyze the results.
 
     This was run with:
     Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]

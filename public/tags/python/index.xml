@@ -12,16 +12,14 @@
       <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>http://localhost:1313/posts/post-landing/</link>
-      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/posts/post-landing/</guid>
-      <description></description>
+      <description>&lt;p&gt;This post demonstrates how to calibrate sideband gates in Python using the Floquet-Landau-Zener (FLZ) physics. The code is designed to be run in a Jupyter Notebook or as a standalone Python script. It uses the &lt;code&gt;scqubits&lt;/code&gt; and &lt;code&gt;qutip&lt;/code&gt; libraries to simulate the dynamics of a superconducting circuit and analyze the results.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;This was run with:
+Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]
+Qutip version: 5.1.1
+scqubits version: 4.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;some-setup&#34;&gt;Some Setup&lt;/h2&gt;
+&lt;p&gt;All the code for this can be found in &lt;a href=&#34;FloquetDemo.ipynb&#34;&gt;this Jupyter Notebook&lt;/a&gt; and &lt;a href=&#34;FloquetDemo.py&#34;&gt;FloquetDemo.py&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     
