@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>FLZ Physics and Sideband Gates in Python</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.39fe1fd35ffd170409ac77b2ae88405f0ad91e498295d952bd4cffeba6dd8128.css" integrity="sha256-Of4f01/9FwQJrHeyrohAXwrZHkmCldlSvUz/66bdgSg=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/popcorn_hu_a3c38b93a2b24cac.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Gavin Rockwood&#39;s Site"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and personal blog of Gavin Rockwood."/>
+<meta property="og:image" content="/images/author/gavin.png">
+<meta property="og:url" content="https://github.com/Gavin-Rockwood">
+
+    
+<meta name="description" content="Demonstrating how to calibrate sideband gates in Python using the FLZ physics." />
+
+
+
+    
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/popcorn_hu_a3c38b93a2b24cac.png" id="logo" alt="Logo">
+      Gavin Rockwood</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">About</a>
+                </li>
+              
+            
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#education">Education</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projects</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#publications">Publications</a>
+                </li>
+              
+            
+            
+            
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="note-link" href="/notes">Notes</a>
+          </li>
+        
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/popcorn_hu_a3c38b93a2b24cac.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/popcorn_hu_a3c38b93a2b24cac.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/quantum-simulations/"> Quantum Simulations</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/quantum-simulations/floquet_landau_zener/"> FLZ Dynamics</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/" title="Sidebands in Python">Sidebands in Python</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/index_files/main_image.svg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/gavin_hu_b00085f09896dba5.png' alt="Author Image">
+          <h5 class="author-name">Gavin Rockwood</h5>
+          <p class="text-muted">Saturday, August 9, 2025 | 7 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>FLZ Physics and Sideband Gates in Python</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/floquet/" class="btn btn-sm btn-info">Floquet</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/superconducting-circuits/" class="btn btn-sm btn-info">Superconducting Circuits</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/python/" class="btn btn-sm btn-info">Python</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/quantum-dynamics/" class="btn btn-sm btn-info">Quantum Dynamics</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <pre><code>This was run with:
+Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]
+Qutip version: 5.1.1
+scqubits version: 4.3
+</code></pre>
+<h2 id="some-setup">Some Setup</h2>
+<p>All the code for this can be found in <a href="FloquetDemo.ipynb">this Jupyter Notebook</a> and <a href="FloquetDemo.py">FloquetDemo.py</a>.</p>
+<h3 id="the-system">The System</h3>
+<p>Below we will the parameters of the quantum system: a superconducting cavity coupled to a transmon.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>EJ <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>
+</span></span><span style="display:flex;"><span>EC <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.1</span>
+</span></span><span style="display:flex;"><span>g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.05</span>
+</span></span><span style="display:flex;"><span>osc_freq <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.109</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>transmon <span style="color:#f92672">=</span> scq<span style="color:#f92672">.</span>Transmon(
+</span></span><span style="display:flex;"><span>    EJ<span style="color:#f92672">=</span>EJ,
+</span></span><span style="display:flex;"><span>    EC<span style="color:#f92672">=</span>EC,
+</span></span><span style="display:flex;"><span>    ncut<span style="color:#f92672">=</span><span style="color:#ae81ff">60</span>,
+</span></span><span style="display:flex;"><span>    ng<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0</span>,
+</span></span><span style="display:flex;"><span>    truncated_dim <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>oscillator <span style="color:#f92672">=</span> scq<span style="color:#f92672">.</span>Oscillator(osc_freq, truncated_dim<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hilbertspace <span style="color:#f92672">=</span> scq<span style="color:#f92672">.</span>HilbertSpace([transmon, oscillator])
+</span></span><span style="display:flex;"><span>hilbertspace<span style="color:#f92672">.</span>add_interaction(g <span style="color:#f92672">=</span> g,
+</span></span><span style="display:flex;"><span>        op1 <span style="color:#f92672">=</span> transmon<span style="color:#f92672">.</span>n_operator,
+</span></span><span style="display:flex;"><span>        op2 <span style="color:#f92672">=</span> oscillator<span style="color:#f92672">.</span>creation_operator, add_hc <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hilbertspace<span style="color:#f92672">.</span>generate_lookup()        
+</span></span></code></pre></div><h3 id="define-envelope-function">Define envelope function</h3>
+<p>These functions build up the envelope of the drive.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Bump_Envelope</span>(t, drive_time, k<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, center<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> center <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>        center <span style="color:#f92672">=</span> drive_time <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>    x <span style="color:#f92672">=</span> (t <span style="color:#f92672">-</span> center) <span style="color:#f92672">/</span> (drive_time <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">&lt;=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">or</span> x <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> x <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>exp(k <span style="color:#f92672">*</span> x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">/</span> (x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">Bump_Ramp_Envelope</span>(t, drive_time, ramp_time<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, k<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> t <span style="color:#f92672">&lt;</span> ramp_time:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Bump_Envelope(t, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> ramp_time, k<span style="color:#f92672">=</span>k)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> ramp_time <span style="color:#f92672">&lt;=</span> t <span style="color:#f92672">&lt;=</span> (drive_time <span style="color:#f92672">-</span> ramp_time):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> t <span style="color:#f92672">&gt;</span> (drive_time <span style="color:#f92672">-</span> ramp_time):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> Bump_Envelope(t, <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> ramp_time, k<span style="color:#f92672">=</span>k, center<span style="color:#f92672">=</span>drive_time <span style="color:#f92672">-</span> ramp_time)
+</span></span></code></pre></div><h3 id="sideband-gate-parameters">Sideband Gate Parameters</h3>
+<p>Below are the initial parameters for the sideband gate.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>epsilon <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.7</span>
+</span></span><span style="display:flex;"><span>base_freq <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.46687</span>
+</span></span><span style="display:flex;"><span>ramp_time <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span></code></pre></div><h2 id="some-initial-tools">Some Initial Tools</h2>
+<p>Before looking at Floquet-Landau-Zener dynamics, we need a function designed to sweep floquet modes for a list of parameters.</p>
+<h3 id="step-1-state-tracking">Step 1: State Tracking</h3>
+<p>In order to understand our system, it will be important to understand how the states evolve as we change parameters in our system. In particular, we will use it to look at the evolution of the Floquet quasienergies and search for avoided crossings! We do this with the function <a href="#state_tracking"><code>state_tracking</code></a>.</p>
+<h3 id="step-2-floquet-sweep">Step 2: Floquet Sweep</h3>
+<p>To sweep Floquet modes (using <code>FloquetBasis</code> from <code>qutip</code> for the for the floquet modes), we will use the function <a href="#floquet_sweep"><code>floquet_sweep</code></a>. This function will take a list of parameters and return the Floquet modes for each parameter.</p>
+<h2 id="calibrating-a-flz-gate">Calibrating A FLZ Gate</h2>
+<h3 id="finding-resonances">Finding Resonances</h3>
+<p>To find resonances, we will use the function <a href="#Find_Resonance"><code>Find_Resonance</code></a>. This function will sweep over a range of Stark shifts, calculate the corresponding quasienergies using Floquet analysis, and fit the difference between reference states to a model function.</p>
+<p>The avoided crossing will have the form
+$$
+\Delta E(\nu) = a\sqrt{(\nu  - b)^2 - c^2}
+$$
+where $\Delta E(\nu)$ is the difference in quasienergies, $\nu$ is the drive frequency, and $a$, $b$, and $c$ are fitting parameters. After fitting, $b$ gives the resonance frequency and $\pi/(2ac)$ is the approximate drive time. This last part comes from the fact that we start in some superposition of floquet modes $\approx\ket{a}+\ket{b}$ and we want to evolve until $\approx\ket{a}-\ket{b}$ and the rate of phase accumulation is given by the difference in quasienergies at the avoided crossing ($ac$). The approximation here is because we are not taking into account the ramps, which cause some amount of phase accumulation.</p>
+<h4 id="example">Example</h4>
+<pre><code>Drive Parameters: 100%|██████████| 11/11 [00:00&lt;00:00, 76.65it/s]
+Reference States: 100%|██████████| 2/2 [00:00&lt;00:00, 773.07it/s]
+
+
+Fitted Drive Frequency: 3.5083554363656906 GHz
+Approximate Drive Time: 207.1777227294477 ns
+</code></pre>
+<p><img src="/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/index_files/index_13_2.svg" alt="svg"></p>
+<h3 id="getting-flat-top-time">Getting Flat Top Time</h3>
+<p>To get the flat top time, we will use the function <code>get_FLZ_flattop</code>. This function takes in the drive parameters and calculates the phase accumulated during the ramp. The remaining required phase then gives the exact flat top time. However, it should be noted that this code assumes the ramp up and the ramp down are the same. Meaning the pulse is symmetric. For a non-symmetric pulse, the phase accumulation during the ramp up and ramp down will be different and that will need to be accounted for.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>psi_e0 <span style="color:#f92672">=</span> hilbertspace<span style="color:#f92672">.</span>eigensys(hilbertspace<span style="color:#f92672">.</span>dimension)[<span style="color:#ae81ff">1</span>][hilbertspace<span style="color:#f92672">.</span>dressed_index((<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>))]
+</span></span><span style="display:flex;"><span>psi_g2 <span style="color:#f92672">=</span> hilbertspace<span style="color:#f92672">.</span>eigensys(hilbertspace<span style="color:#f92672">.</span>dimension)[<span style="color:#ae81ff">1</span>][hilbertspace<span style="color:#f92672">.</span>dressed_index((<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">2</span>))]
+</span></span><span style="display:flex;"><span>H_op <span style="color:#f92672">=</span> hilbertspace<span style="color:#f92672">.</span>hamiltonian()
+</span></span><span style="display:flex;"><span>drive_freq <span style="color:#f92672">=</span> resonance_fit_res[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>envelope_func <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span> t: Bump_Ramp_Envelope(t, ramp_time<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>, ramp_time <span style="color:#f92672">=</span> ramp_time, k <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>flat_top_time <span style="color:#f92672">=</span> get_FLZ_flattop(H_op<span style="color:#f92672">=</span>H_op,
+</span></span><span style="display:flex;"><span>        drive_op<span style="color:#f92672">=</span>drive_op, 
+</span></span><span style="display:flex;"><span>        freq<span style="color:#f92672">=</span>drive_freq,
+</span></span><span style="display:flex;"><span>        epsilon<span style="color:#f92672">=</span>epsilon,
+</span></span><span style="display:flex;"><span>        envelope_func<span style="color:#f92672">=</span>envelope_func,
+</span></span><span style="display:flex;"><span>        ramp_time<span style="color:#f92672">=</span>ramp_time,
+</span></span><span style="display:flex;"><span>        psi0<span style="color:#f92672">=</span>psi_e0,
+</span></span><span style="display:flex;"><span>        psi1<span style="color:#f92672">=</span>psi_g2,
+</span></span><span style="display:flex;"><span>        num_t_samples<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>,
+</span></span><span style="display:flex;"><span>        n_theta_samples<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span>)
+</span></span></code></pre></div><pre><code>Drive Parameters: 100%|██████████| 20/20 [00:00&lt;00:00, 82.22it/s]site-packages/scqubits/utils/spectrum_utils.py: 199
+Reference States: 100%|██████████| 2/2 [00:00&lt;00:00, 429.28it/s]
+
+floq_frequency: 0.0024426663275292377
+θ: 3.1563191352956967, θr: 3.112139690177986
+Flat top time: 202.7753073361091
+</code></pre>
+<h2 id="running-the-sideband">Running The Sideband</h2>
+<pre><code>Final Fidelity: 99.3 %
+</code></pre>
+<p><img src="/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/index_files/index_18_2.svg" alt="svg">
+*### Projecting the Dynamics onto the Floquet Basis
+First, we will use the function <code>floquet_sweep</code> to get the Floquet modes for a range of parameters. This will allow us to see how the Floquet modes evolve as we change the parameters of our system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>drive_params <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> run_res<span style="color:#f92672">.</span>times:
+</span></span><span style="display:flex;"><span>    drive_params<span style="color:#f92672">.</span>append({<span style="color:#e6db74">&#34;epsilon&#34;</span>: envelope(t), <span style="color:#e6db74">&#34;frequency&#34;</span>: drive_freq})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>floq_sweep_res <span style="color:#f92672">=</span> Floquet_Sweep(drive_params, hilbertspace<span style="color:#f92672">.</span>hamiltonian(), drive_op, sample_times <span style="color:#f92672">=</span> run_res<span style="color:#f92672">.</span>times, reference_states <span style="color:#f92672">=</span> [psi_e0, psi_g2])
+</span></span></code></pre></div><pre><code>Drive Parameters: 100%|██████████| 782/782 [00:00&lt;00:00, 857.67it/s] 
+Reference States: 100%|██████████| 2/2 [00:00&lt;00:00, 24.02it/s]
+</code></pre>
+<p>We can then project the dynamics onto the Floquet basis to see how the states evolve as we change the parameters of our system.</p>
+<p><img src="/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/index_files/index_22_1.svg" alt="svg"></p>
+<p>we see that the ramp takes us to a near $50/50$ position of the two Floquet modes. The closer the states are to this point, the higher the resulting fidelity will be!</p>
+<h2 id="docstrings">Docstrings</h2>
+<h3 id="state_tracking"><code>state_tracking</code></h3>
+<pre><code>    Tracks the evolution of quantum states for some list of states at different steps (general sweeping parameters).
+    Args:
+        state_history (list of list): A list where each element is a list of quantum states at a given time step.
+        other_sorts (list of list, optional): Additional lists of data associated with each state, to be tracked alongside the main state history.
+        reference_states (list, optional): List of reference quantum states to track. If empty, uses the first set of states in `state_history`.
+    Returns:
+        dict: A dictionary containing:
+            - &quot;history&quot;: List of lists of tracked quantum states for each reference state.
+            - &quot;other_sorts&quot;: List of lists of associated data for each tracked state.
+            - &quot;overlap_history&quot;: List of lists of overlap values between reference states and all states at each time step.
+</code></pre>
+<h3 id="floquetsweep"><code>FloquetSweep</code></h3>
+<pre><code>    Computes Floquet modes and quasienergies for a set of drive parameters, and sorts the results according to reference states.
+    Parameters
+    ----------
+    drive_params : list of dict
+        List of dictionaries specifying drive parameters for each sweep point. Each dictionary should contain at least
+        'epsilon' (drive amplitude) and 'frequency' (drive frequency).
+    ham : qutip.Qobj
+        The static part of the system Hamiltonian.
+    drive_op : qutip.Qobj
+        The operator representing the driven part of the Hamiltonian.
+    reference_states : list, optional
+        List of reference states used for sorting the Floquet modes. Default is an empty list.
+    sample_times : list, optional
+        List of times at which to sample the Floquet modes for each drive parameter. If not provided, defaults to t=0 for all.
+    Returns
+    -------
+    sort_res : tuple
+        The sorted Floquet modes and associated quasienergies, as returned by `state_tracking`.
+</code></pre>
+<h3 id="find_resonance"><code>Find_Resonance</code></h3>
+<pre><code>    Computes and fits the resonance in a driven quantum system using Floquet theory.
+    This function sweeps over a range of Stark shifts, calculates the corresponding quasienergies
+    using Floquet analysis, and fits the difference between reference states to a model function.
+    Optionally, it plots the quasienergies and fitted difference.
+    Parameters
+    ----------
+    ham : array-like or object
+        The system Hamiltonian.
+    drive_op : array-like or object
+        The operator representing the drive.
+    base_freq : float
+        The base frequency of the drive (in GHz).
+    epsilon : float
+        The drive amplitude.
+    stark_shifts : array-like
+        Array of Stark shift values (in GHz) to sweep over.
+    reference_states : list or array-like
+        States used as references for extracting quasienergies.
+    show_plot : bool, optional
+        If True, displays a plot of the quasienergies and fitted difference (default is True).
+    Returns
+    -------
+    list
+        [fitted_stark_shift, approximate_drive_time], where:
+            fitted_stark_shift : float
+                The Stark shift value at the minimum difference (in GHz).
+            approximate_drive_time : float
+                The approximate drive time (in ns) extracted from the fit.
+    Notes
+    -----
+    - Requires the functions `Floquet_Sweep` and `opt.curve_fit` to be defined/imported.
+    - Uses matplotlib for plotting.
+    - Assumes quasienergies are returned in `floquet_sweep_res[&quot;other_sorts&quot;]`.
+</code></pre>
+<h3 id="get_flz_flattop"><code>get_FLZ_flattop</code></h3>
+<pre><code>    Python conversion of the Julia get_FLZ_flattop function.
+    
+    Parameters:
+    -----------
+    H_op : qutip.Qobj
+        The Hamiltonian operator
+    drive_op : qutip.Qobj  
+        The drive operator
+    freq : float
+        The drive frequency
+    epsilon : float
+        The drive amplitude
+    envelope_func : function
+        The envelope function that takes time as argument
+    ramp_time : float
+        The total ramp time
+    psi0, psi1 : qutip.Qobj
+        The two states to track
+    num_t_samples : int, optional
+        Number of time samples (default: 10)
+    epsilons_to_sample : list, optional
+        List of epsilon values to sample (if empty, will be generated)
+    n_theta_samples : int, optional
+        Number of theta samples for optimization (default: 100)
+    dt : float, optional
+        Time step (if 0, will be set to 1/freq)
+        
+    Returns:
+    --------
+    float
+        The absolute value of θr/(2π*floq_frequency)
+</code></pre>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fquantum-simulations%2ffloquet_landau_zener%2fsidebands-in-python%2f" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            
+            
+                <a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fquantum-simulations%2ffloquet_landau_zener%2fsidebands-in-python%2f&text=FLZ%20Physics%20and%20Sideband%20Gates%20in%20Python&via=Gavin%20Rockwood" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+            
+            
+                <a  class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fquantum-simulations%2ffloquet_landau_zener%2fsidebands-in-python%2f&title=FLZ%20Physics%20and%20Sideband%20Gates%20in%20Python" target="_blank">
+                  <i class="fab fa-reddit"></i>
+                </a>
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fquantum-simulations%2ffloquet_landau_zener%2fsidebands-in-python%2f&title=FLZ%20Physics%20and%20Sideband%20Gates%20in%20Python" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=FLZ%20Physics%20and%20Sideband%20Gates%20in%20Python http%3a%2f%2flocalhost%3a1313%2fposts%2fquantum-simulations%2ffloquet_landau_zener%2fsidebands-in-python%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=FLZ%20Physics%20and%20Sideband%20Gates%20in%20Python&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fquantum-simulations%2ffloquet_landau_zener%2fsidebands-in-python%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+          
+            
+          
+          <div class="col-md-6 btn-improve-page">
+             
+               <a href="https://github.com/Gavin-Rockwood/Gavin-Rockwood.github.io/edit/main/content/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/index.md" title="Improve this page" target="_blank" rel="noopener">
+            
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+    
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#some-setup">Some Setup</a>
+      <ul>
+        <li><a href="#the-system">The System</a></li>
+        <li><a href="#define-envelope-function">Define envelope function</a></li>
+        <li><a href="#sideband-gate-parameters">Sideband Gate Parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#some-initial-tools">Some Initial Tools</a>
+      <ul>
+        <li><a href="#step-1-state-tracking">Step 1: State Tracking</a></li>
+        <li><a href="#step-2-floquet-sweep">Step 2: Floquet Sweep</a></li>
+      </ul>
+    </li>
+    <li><a href="#calibrating-a-flz-gate">Calibrating A FLZ Gate</a>
+      <ul>
+        <li><a href="#finding-resonances">Finding Resonances</a>
+          <ul>
+            <li><a href="#example">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#getting-flat-top-time">Getting Flat Top Time</a></li>
+      </ul>
+    </li>
+    <li><a href="#running-the-sideband">Running The Sideband</a></li>
+    <li><a href="#docstrings">Docstrings</a>
+      <ul>
+        <li><a href="#state_tracking"><code>state_tracking</code></a></li>
+        <li><a href="#floquetsweep"><code>FloquetSweep</code></a></li>
+        <li><a href="#find_resonance"><code>Find_Resonance</code></a></li>
+        <li><a href="#get_flz_flattop"><code>get_FLZ_flattop</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">About</a>
+                </li>
+              
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#education">Education</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projects</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#publications">Publications</a>
+                </li>
+              
+              
+              
+              
+              
+            
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:gavin.rockwood@gmail.com target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>gavin.rockwood@gmail.com</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/Gavin-Rockwood target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>Gavin-Rockwood</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    <hr />
+    <div class="container">
+      <p id="disclaimer"><strong>Liability Notice:</strong> This theme is under MIT license. So, you can use it for non-commercial, commercial, or private uses. You can modify or distribute the theme without requiring any permission from the theme author. However, the theme author does not provide any warranty or takes any liability for any issue with the theme.</p>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-start">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu_b3360284c55cf72d.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2025 Copyright.</div>
+        <div class="col-md-4 text-end">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script src="/application.a9ee00279a18d3e722e5c7e979d6cadadc33055718ea4642441a09af2e4fa19f.js" integrity="sha256-qe4AJ5oY0&#43;ci5cfpedbK2twzBVcY6kZCRBoJry5PoZ8=" defer></script>
+
+
+    
+     
+
+    
+    
+
+</body>
+</html>

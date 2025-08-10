@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flquet-Landau-Zener Dynamics on Gavin Rockwood</title>
+    <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/</link>
+    <description>Recent content in Flquet-Landau-Zener Dynamics on Gavin Rockwood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>FLZ Physics and Sideband Gates in Python</title>
+      <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/iindex/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/iindex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FLZ Physics and Sideband Gates in Python</title>
+      <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;This was run with:
+Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]
+Qutip version: 5.1.1
+scqubits version: 4.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;some-setup&#34;&gt;Some Setup&lt;/h2&gt;
+&lt;p&gt;All the code for this can be found in &lt;a href=&#34;FloquetDemo.ipynb&#34;&gt;this Jupyter Notebook&lt;/a&gt; and &lt;a href=&#34;FloquetDemo.py&#34;&gt;FloquetDemo.py&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;the-system&#34;&gt;The System&lt;/h3&gt;
+&lt;p&gt;Below we will the parameters of the quantum system: a superconducting cavity coupled to a transmon.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;EJ &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;29&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;EC &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;g &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.05&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;osc_freq &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4.109&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;transmon &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scq&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Transmon(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    EJ&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;EJ,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    EC&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;EC,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ncut&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ng&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    truncated_dim &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;oscillator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scq&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Oscillator(osc_freq, truncated_dim&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hilbertspace &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scq&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;HilbertSpace([transmon, oscillator])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hilbertspace&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_interaction(g &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; g,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        op1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; transmon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;n_operator,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        op2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; oscillator&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;creation_operator, add_hc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hilbertspace&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;generate_lookup()        
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;define-envelope-function&#34;&gt;Define envelope function&lt;/h3&gt;
+&lt;p&gt;These functions build up the envelope of the drive.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/floquetdemo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/floquetdemo/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;This was run with:
+Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]
+Qutip version: 5.1.1
+scqubits version: 4.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;some-initial-tools&#34;&gt;Some Initial Tools&lt;/h2&gt;
+&lt;p&gt;Before looking at Floquet-Landau-Zener dynamics, we need a function designed to sweep floquet modes for a list of parameters.&lt;/p&gt;
+&lt;h3 id=&#34;step-1-state-tracking&#34;&gt;Step 1: State Tracking&lt;/h3&gt;
+&lt;p&gt;In order to understand our system, it will be important to understand how the states evolve as we change parameters in our system. In particular, we will use it to look at the evolution of the Floquet quasienergies and search for avoided crossings! We do this with the function &lt;code&gt;state_tracking&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

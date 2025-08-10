@@ -2,250 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gavin Rockwood</title>
-    <link>https://hugo-toha.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Gavin Rockwood</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 08 Jun 2020 08:06:25 +0600</lastBuildDate><atom:link href="https://hugo-toha.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-      <title>Introduction</title>
-      <link>https://hugo-toha.github.io/posts/introduction/</link>
-      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
+    <lastBuildDate>Sat, 09 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>FLZ Physics and Sideband Gates in Python</title>
+      <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/iindex/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/posts/introduction/</guid>
-      <description>&lt;p&gt;Greeting! This is an introduction post. This post tests the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Hero image is in the same directory as the post.&lt;/li&gt;
-&lt;li&gt;This post should be at top of the sidebar.&lt;/li&gt;
-&lt;li&gt;Post author should be the same as specified in &lt;code&gt;author.yaml&lt;/code&gt; file.&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/iindex/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>Markdown Samples</title>
-      <link>https://hugo-toha.github.io/posts/markdown-sample/</link>
-      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
+      <title>FLZ Physics and Sideband Gates in Python</title>
+      <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/posts/markdown-sample/</guid>
-      <description>&lt;p&gt;This is a sample post intended to test the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;A different post author.&lt;/li&gt;
-&lt;li&gt;Table of contents.&lt;/li&gt;
-&lt;li&gt;Markdown content rendering.&lt;/li&gt;
-&lt;li&gt;Math rendering.&lt;/li&gt;
-&lt;li&gt;Emoji rendering.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;markdown-syntax-rendering&#34;&gt;Markdown Syntax Rendering&lt;/h1&gt;
-&lt;h2 id=&#34;headings&#34;&gt;Headings&lt;/h2&gt;
-&lt;p&gt;The following HTML &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;—&lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; elements represent six levels of section headings. &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the highest section level while &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the lowest.&lt;/p&gt;
-&lt;h1 id=&#34;h1&#34;&gt;H1&lt;/h1&gt;
-&lt;h2 id=&#34;h2&#34;&gt;H2&lt;/h2&gt;
-&lt;h3 id=&#34;h3&#34;&gt;H3&lt;/h3&gt;
-&lt;h4 id=&#34;h4&#34;&gt;H4&lt;/h4&gt;
-&lt;h5 id=&#34;h5&#34;&gt;H5&lt;/h5&gt;
-&lt;h6 id=&#34;h6&#34;&gt;H6&lt;/h6&gt;
-&lt;h2 id=&#34;paragraph&#34;&gt;Paragraph&lt;/h2&gt;
-&lt;p&gt;Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Rich Content</title>
-      <link>https://hugo-toha.github.io/posts/category/sub-category/rich-content/</link>
-      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
-      
-      <guid>https://hugo-toha.github.io/posts/category/sub-category/rich-content/</guid>
-      <description>&lt;p&gt;This sample post tests the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Category, sub-category nesting in the sidebar.&lt;/li&gt;
-&lt;li&gt;Hero image and other images are in &lt;code&gt;images&lt;/code&gt; folder inside this post directory.&lt;/li&gt;
-&lt;li&gt;Different media rendering like image, tweet, YouTube video, Vimeo video etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;image-sample&#34;&gt;Image Sample&lt;/h3&gt;
-&lt;img src=&#34;https://hugo-toha.github.io/posts/category/sub-category/rich-content/images/forest.jpg&#34;
-    
-        alt=&#34;Forest&#34;
-    
-    
-    
-    
-    
-        class=&#34;center&#34;
-    
-&gt;
-
-&lt;div style=&#34;margin-top: rem;&#34;&gt;&lt;/div&gt;
-&lt;h3 id=&#34;tweet-sample&#34;&gt;Tweet Sample&lt;/h3&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Owl bet you&amp;#39;ll lose this staring contest 🦉 &lt;a href=&#34;https://t.co/eJh4f2zncC&#34;&gt;pic.twitter.com/eJh4f2zncC&lt;/a&gt;&lt;/p&gt;&amp;mdash; San Diego Zoo Wildlife Alliance (@sandiegozoo) &lt;a href=&#34;https://twitter.com/sandiegozoo/status/1453110110599868418?ref_src=twsrc%5Etfw&#34;&gt;October 26, 2021&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-
-
-&lt;div style=&#34;margin-top: rem;&#34;&gt;&lt;/div&gt;
-&lt;h3 id=&#34;youtube-video-sample&#34;&gt;YouTube Video Sample&lt;/h3&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube.com/embed/ZJthWmvUzzc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
-    &lt;/div&gt;
-
-&lt;div style=&#34;margin-top: rem;&#34;&gt;&lt;/div&gt;
-&lt;h3 id=&#34;vimeo-video-sample&#34;&gt;Vimeo Video Sample&lt;/h3&gt;
-
-      &lt;div
-          style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-        &lt;iframe
-          src=&#34;https://player.vimeo.com/video/48912912?dnt=0&#34;
-            style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allow=&#34;fullscreen&#34;&gt;
-        &lt;/iframe&gt;
-      &lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Shortcodes Samples</title>
-      <link>https://hugo-toha.github.io/posts/shortcodes/</link>
-      <pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate>
-      
-      <guid>https://hugo-toha.github.io/posts/shortcodes/</guid>
-      <description>&lt;p&gt;This is a sample post intended to test the followings:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Default hero image.&lt;/li&gt;
-&lt;li&gt;Different shortcodes.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;alert&#34;&gt;Alert&lt;/h2&gt;
-&lt;p&gt;The following alerts are available in this theme.&lt;/p&gt;
-
-
-
-    
-
-
-&lt;div class=&#34;alert success&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;check-circle&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;success&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-
-
-
-    
-
-
-&lt;div class=&#34;alert danger&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;alert-octagon&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;danger&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-
-
-
-    
-
-
-&lt;div class=&#34;alert warning&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;alert-triangle&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;warning&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-
-
-
-    
-
-
-&lt;div class=&#34;alert info&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;info&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;info&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-
-
-
-
-&lt;div class=&#34;alert dark&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;alert-circle&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;dark&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-
-
-
-
-&lt;div class=&#34;alert primary&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;alert-circle&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;primary&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-
-
-
-
-&lt;div class=&#34;alert secondary&#34;&gt;
-    &lt;span&gt;&lt;i data-feather=&#34;alert-circle&#34;&gt;&lt;/i&gt;&lt;/span&gt;
-    &lt;span&gt;&lt;strong&gt;This is sample alert with &lt;code&gt;type=&amp;quot;secondary&amp;quot;&lt;/code&gt;.&lt;/strong&gt;&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;image&#34;&gt;Image&lt;/h2&gt;
-&lt;h4 id=&#34;a-sample-image-without-any-attribute&#34;&gt;A sample image without any attribute.&lt;/h4&gt;
-&lt;img src=&#34;https://hugo-toha.github.io/posts/shortcodes/boat.jpg&#34;
-    
-        alt=&#34;A boat at the sea&#34;
-    
-    
-    
-    
-    
-&gt;
-
-&lt;div style=&#34;margin-top: 3rem;&#34;&gt;&lt;/div&gt;
-&lt;h4 id=&#34;a-sample-image-with-height-and-width-attributes&#34;&gt;A sample image with &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; attributes.&lt;/h4&gt;
-&lt;img src=&#34;https://hugo-toha.github.io/posts/shortcodes/boat.jpg&#34;
-    
-        alt=&#34;A boat at the sea&#34;
-    
-    
-        width=&#34;600&#34;
-    
-    
-        height=&#34;400&#34;
-    
-    
-    
-&gt;
-
-&lt;div style=&#34;margin-top: 3rem;&#34;&gt;&lt;/div&gt;
-&lt;h4 id=&#34;a-center-aligned-image-with-height-and-width-attributes&#34;&gt;A center aligned image with &lt;code&gt;height&lt;/code&gt; and &lt;code&gt;width&lt;/code&gt; attributes.&lt;/h4&gt;
-&lt;img src=&#34;https://hugo-toha.github.io/posts/shortcodes/boat.jpg&#34;
-    
-        alt=&#34;A boat at the sea&#34;
-    
-    
-        width=&#34;600&#34;
-    
-    
-        height=&#34;400&#34;
-    
-    
-    
-        class=&#34;center&#34;
-    
-&gt;
-
-&lt;div style=&#34;margin-top: 3rem;&#34;&gt;&lt;/div&gt;
-&lt;h4 id=&#34;a-image-with-float-attribute&#34;&gt;A image with &lt;code&gt;float&lt;/code&gt; attribute.&lt;/h4&gt;
-&lt;img src=&#34;https://hugo-toha.github.io/posts/shortcodes/boat.jpg&#34;
-    
-        alt=&#34;A boat at the sea&#34;
-    
-    
-        width=&#34;500&#34;
-    
-    
-        height=&#34;200&#34;
-    
-    
-        style=&#34;float: right;&#34;
-    
-    
-&gt;
-
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas lectus sed leo ultricies ultricies. Praesent tellus risus, eleifend vel efficitur ac, venenatis sit amet sem. Ut ut egestas erat. Fusce ut leo turpis. Morbi consectetur sed lacus vitae vehicula. Cras gravida turpis id eleifend volutpat. Suspendisse nec ipsum eu erat finibus dictum. Morbi volutpat nulla purus, vel maximus ex molestie id. Nullam posuere est urna, at fringilla eros venenatis quis.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;This was run with:
+Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]
+Qutip version: 5.1.1
+scqubits version: 4.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;some-setup&#34;&gt;Some Setup&lt;/h2&gt;
+&lt;p&gt;All the code for this can be found in &lt;a href=&#34;FloquetDemo.ipynb&#34;&gt;this Jupyter Notebook&lt;/a&gt; and &lt;a href=&#34;FloquetDemo.py&#34;&gt;FloquetDemo.py&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;the-system&#34;&gt;The System&lt;/h3&gt;
+&lt;p&gt;Below we will the parameters of the quantum system: a superconducting cavity coupled to a transmon.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;EJ &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;29&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;EC &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;g &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.05&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;osc_freq &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4.109&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;transmon &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scq&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Transmon(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    EJ&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;EJ,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    EC&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;EC,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ncut&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ng&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0.0&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    truncated_dim &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;oscillator &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scq&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;Oscillator(osc_freq, truncated_dim&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hilbertspace &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; scq&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;HilbertSpace([transmon, oscillator])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hilbertspace&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;add_interaction(g &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; g,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        op1 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; transmon&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;n_operator,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        op2 &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; oscillator&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;creation_operator, add_hc &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hilbertspace&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;generate_lookup()        
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;define-envelope-function&#34;&gt;Define envelope function&lt;/h3&gt;
+&lt;p&gt;These functions build up the envelope of the drive.&lt;/p&gt;</description>
     </item>
     
     
@@ -275,19 +81,19 @@
     
     <item>
       <title>Go বেসিক</title>
-      <link>https://hugo-toha.github.io/notes/go/basic/_index.bn/</link>
+      <link>http://localhost:1313/notes/go/basic/_index.bn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/basic/_index.bn/</guid>
+      <guid>http://localhost:1313/notes/go/basic/_index.bn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction</title>
-      <link>https://hugo-toha.github.io/notes/go/basic/introduction/</link>
+      <link>http://localhost:1313/notes/go/basic/introduction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/basic/introduction/</guid>
+      <guid>http://localhost:1313/notes/go/basic/introduction/</guid>
       <description>&lt;!-- A Sample Program --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -352,10 +158,10 @@
     
     <item>
       <title>Basic Types</title>
-      <link>https://hugo-toha.github.io/notes/go/basic/types/</link>
+      <link>http://localhost:1313/notes/go/basic/types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/basic/types/</guid>
+      <guid>http://localhost:1313/notes/go/basic/types/</guid>
       <description>&lt;!-- String Type --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -425,19 +231,19 @@
     
     <item>
       <title>অ্যাডভান্সড</title>
-      <link>https://hugo-toha.github.io/notes/go/advanced/_index.bn/</link>
+      <link>http://localhost:1313/notes/go/advanced/_index.bn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/advanced/_index.bn/</guid>
+      <guid>http://localhost:1313/notes/go/advanced/_index.bn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flow Control</title>
-      <link>https://hugo-toha.github.io/notes/go/basic/flow-control/</link>
+      <link>http://localhost:1313/notes/go/basic/flow-control/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/basic/flow-control/</guid>
+      <guid>http://localhost:1313/notes/go/basic/flow-control/</guid>
       <description>&lt;!-- Condition --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -508,10 +314,10 @@
     
     <item>
       <title>File Manipulation</title>
-      <link>https://hugo-toha.github.io/notes/go/advanced/files/</link>
+      <link>http://localhost:1313/notes/go/advanced/files/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/advanced/files/</guid>
+      <guid>http://localhost:1313/notes/go/advanced/files/</guid>
       <description>&lt;!-- Condition --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -536,10 +342,10 @@
     
     <item>
       <title>Bash Variables</title>
-      <link>https://hugo-toha.github.io/notes/bash/basic/</link>
+      <link>http://localhost:1313/notes/bash/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/bash/basic/</guid>
+      <guid>http://localhost:1313/notes/bash/basic/</guid>
       <description>&lt;!-- Variable --&gt;
 &lt;div class=&#34;note-card &#34;&gt;
     &lt;div class=&#34;item&#34;&gt;
@@ -575,48 +381,47 @@
     </item>
     
     <item>
-      <title>Go এর নোট সমূহ</title>
-      <link>https://hugo-toha.github.io/notes/go/_index.bn/</link>
+      <title></title>
+      <link>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/floquetdemo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/go/_index.bn/</guid>
+      <guid>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/floquetdemo/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;This was run with:
+Python version: 3.11.10 (main, Nov 26 2024, 19:12:45) [Clang 16.0.0 (clang-1600.0.26.4)]
+Qutip version: 5.1.1
+scqubits version: 4.3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;some-initial-tools&#34;&gt;Some Initial Tools&lt;/h2&gt;
+&lt;p&gt;Before looking at Floquet-Landau-Zener dynamics, we need a function designed to sweep floquet modes for a list of parameters.&lt;/p&gt;
+&lt;h3 id=&#34;step-1-state-tracking&#34;&gt;Step 1: State Tracking&lt;/h3&gt;
+&lt;p&gt;In order to understand our system, it will be important to understand how the states evolve as we change parameters in our system. In particular, we will use it to look at the evolution of the Floquet quasienergies and search for avoided crossings! We do this with the function &lt;code&gt;state_tracking&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go এর নোট সমূহ</title>
+      <link>http://localhost:1313/notes/go/_index.bn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/notes/go/_index.bn/</guid>
       <description>&lt;h1 id=&#34;go-notes&#34;&gt;Go Notes&lt;/h1&gt;</description>
     </item>
     
     
     <item>
-      <title>Sub-Category</title>
-      <link>https://hugo-toha.github.io/posts/category/sub-category/_index.bn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hugo-toha.github.io/posts/category/sub-category/_index.bn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Top Category Sample</title>
-      <link>https://hugo-toha.github.io/posts/category/_index.bn/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hugo-toha.github.io/posts/category/_index.bn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>নোট সমূহ</title>
-      <link>https://hugo-toha.github.io/notes/_index.bn/</link>
+      <link>http://localhost:1313/notes/_index.bn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/_index.bn/</guid>
+      <guid>http://localhost:1313/notes/_index.bn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ব্যাশের নোট সমূহ</title>
-      <link>https://hugo-toha.github.io/notes/bash/_index.bn/</link>
+      <link>http://localhost:1313/notes/bash/_index.bn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://hugo-toha.github.io/notes/bash/_index.bn/</guid>
+      <guid>http://localhost:1313/notes/bash/_index.bn/</guid>
       <description>&lt;h1 id=&#34;bash-notes&#34;&gt;Bash Notes&lt;/h1&gt;</description>
     </item>
     

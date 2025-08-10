@@ -2,190 +2,180 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hugo-toha.github.io/notes/go/basic/</loc>
+    <loc>http://localhost:1313/notes/go/basic/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/basic/_index.bn/</loc>
+    <loc>http://localhost:1313/notes/go/basic/_index.bn/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/basic/introduction/</loc>
+    <loc>http://localhost:1313/notes/go/basic/introduction/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/advanced/</loc>
+    <loc>http://localhost:1313/notes/go/advanced/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/basic/types/</loc>
+    <loc>http://localhost:1313/notes/go/basic/types/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/advanced/_index.bn/</loc>
+    <loc>http://localhost:1313/notes/go/advanced/_index.bn/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/basic/flow-control/</loc>
+    <loc>http://localhost:1313/notes/go/basic/flow-control/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/advanced/files/</loc>
+    <loc>http://localhost:1313/notes/go/advanced/files/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/bash/basic/</loc>
+    <loc>http://localhost:1313/notes/bash/basic/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/categories/basic/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/tags/basic/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/categories/code-examples/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/categories/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/tags/floquet/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/tags/content-organization/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/posts/quantum-simulations/floquet_landau_zener/sidebands-in-python/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/introduction/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/tags/markdown/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/markdown-sample/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/tags/multi-lingual/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/tags/quantum-dynamics/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/posts/quantum-simulations/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/category/sub-category/rich-content/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/tags/superconducting-circuits/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/shortcodes/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/category/sub-category/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
+    <loc>http://localhost:1313/posts/post-landing/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/tags/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
-  </url><url>
-    <loc>https://hugo-toha.github.io/posts/category/</loc>
-    <lastmod>2020-06-08T08:06:25+06:00</lastmod>
-  </url><url>
-    <loc>https://hugo-toha.github.io/notes/</loc>
+    <loc>http://localhost:1313/notes/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <lastmod>2010-06-08T08:06:25+06:00</lastmod>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/bash/</loc>
+    <loc>http://localhost:1313/notes/bash/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/</loc>
+    <loc>http://localhost:1313/notes/go/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/notes/go/_index.bn/</loc>
+    <loc>http://localhost:1313/notes/go/_index.bn/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/search/</loc>
+    <loc>http://localhost:1313/search/</loc>
     <priority>0.1</priority>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/category/sub-category/_index.bn/</loc>
+    <loc>http://localhost:1313/notes/_index.bn/</loc>
   </url><url>
-    <loc>https://hugo-toha.github.io/posts/category/_index.bn/</loc>
-  </url><url>
-    <loc>https://hugo-toha.github.io/notes/_index.bn/</loc>
-  </url><url>
-    <loc>https://hugo-toha.github.io/notes/bash/_index.bn/</loc>
+    <loc>http://localhost:1313/notes/bash/_index.bn/</loc>
   </url>
 </urlset>
