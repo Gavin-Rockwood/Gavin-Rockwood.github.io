@@ -23,32 +23,42 @@ def state_tracking(state_history, other_sorts = [], reference_states = []):
     """
 
 
+    # If no reference states are provided, use the first set of states in state_history
     if len(reference_states) == 0:
         reference_states = state_history[0]
 
-    history = []
-    history_other_sorts = []
+    history = []                # Tracks the best-matching state at each step for each reference state
+    history_other_sorts = []    # Tracks associated data (other_sorts) for each matched state
     previous_states = reference_states
-    overlap_history = []
+    overlap_history = []        # Stores overlaps between reference states and all states at each step
+
+    # Loop over each reference state
     for state in tqdm.tqdm(range(len(reference_states)), desc = 'Reference States'):
-        psi_im1 = reference_states[state]
+        psi_im1 = reference_states[state]  # Start with the reference state
         history.append([])
         history_other_sorts.append([])
         overlap_history.append([])
+
+        # For each step in the state history
         for step in range(len(state_history)):
             overlaps = []
+            # Compute overlap of psi_im1 with all states at this step
             for j in range(len(state_history[step])):
                 overlaps.append(abs(state_history[step][j].dag()*psi_im1))
     
-            max_loc = np.argmax(overlaps)
-            history[state].append(state_history[step][max_loc])
+            max_loc = np.argmax(overlaps)  # Find the state with maximum overlap
+            history[state].append(state_history[step][max_loc])  # Track the best-matching state
+
+            # Track associated data for the matched state
             to_append = []
             for sort in other_sorts:
                 to_append.append(sort[step][max_loc])
             history_other_sorts[state].append(to_append)
-            overlap_history[state].append(overlaps)
-            psi_im1 = state_history[step][max_loc]
 
+            overlap_history[state].append(overlaps)  # Store all overlaps for analysis
+            psi_im1 = state_history[step][max_loc]   # Update psi_im1 for next step
+
+    # Return results as a dictionary
     return {"history": history, "other_sorts": history_other_sorts, "overlap_history": overlap_history}
 
 
@@ -75,31 +85,41 @@ def Floquet_Sweep(drive_params, ham, drive_op, reference_states = [], sample_tim
     """
 
     # Unless sample times are provided, we assume the sampling is at t=0
+    # If no sample times are provided, default to t=0 for all drive parameters
     if len(sample_times) == 0:
         sample_times = [0]*len(drive_params)
     
-    floquet_bases = []
-    floquet_modes = []
-    floquet_energies = []
-    completed_params = {}
+    floquet_bases = []      # Stores FloquetBasis objects for each drive parameter
+    floquet_modes = []      # Stores Floquet modes sampled at specified times
+    floquet_energies = []   # Stores Floquet quasienergies for each parameter set
+    completed_params = {}   # Dictionary to avoid recomputation for identical drive parameters
+
+    # Loop over each set of drive parameters
     for i in tqdm.tqdm(range(len(drive_params)), desc = "Drive Parameters"):
-        # Check if the drive parameters have already been computed
+        # Check if this set of drive parameters has already been computed
         if str(drive_params[i]) in completed_params.keys():
+            # Use previously computed Floquet mode and energy
             floquet_modes.append(floquet_bases[completed_params[str(drive_params[i])]].mode(sample_times[i]))
             floquet_energies.append(floquet_energies[completed_params[str(drive_params[i])]])
-
         else:
+            # Extract drive amplitude and frequency
             epsilon = drive_params[i]["epsilon"]
             freq = drive_params[i]["frequency"]
+            # Define time-dependent drive coefficient
             drive_coef = lambda t: epsilon*np.sin(2*np.pi*freq*t)
-
+            # Construct time-dependent Hamiltonian
             H_T = qt.QobjEvo([ham, [drive_op, drive_coef]])
+            # Create Floquet basis for the system
             floquet_basis = qt.FloquetBasis(2*np.pi*H_T, 1/freq)
             floquet_bases.append(floquet_basis)
+            # Sample Floquet mode at the specified time
             floquet_modes.append(floquet_basis.mode(sample_times[i]))
+            # Store Floquet quasienergies
             floquet_energies.append(floquet_basis.e_quasi)
+            # Mark this parameter set as completed
             completed_params[str(drive_params[i])] = i
     
+    # Sort Floquet modes and energies according to reference states
     sort_res = state_tracking(floquet_modes, other_sorts = [floquet_energies], reference_states = reference_states)
 
     return sort_res    
@@ -140,34 +160,43 @@ def Find_Resonance(ham, drive_op, drive_freqs, epsilon, reference_states, show_p
     - Uses matplotlib for plotting.
     - Assumes quasienergies are returned in `floquet_sweep_res["other_sorts"]`.
     """
+    # Build list of drive parameter dictionaries for each drive frequency
     drive_params = []
     for drive_freq in drive_freqs:
         drive_params.append({"frequency": drive_freq, "epsilon": epsilon})
     
+    # Perform Floquet sweep to get sorted Floquet modes and quasienergies
     floquet_sweep_res = Floquet_Sweep(drive_params, ham, drive_op, reference_states = reference_states)
     #return floquet_sweep_res
 
+    # Extract quasienergies for both reference states, normalized by pi
     q_vals1 = np.array([floquet_sweep_res["other_sorts"][0][i][0] for i in range(len(floquet_sweep_res["other_sorts"][0]))])/np.pi
     q_vals2 = np.array([floquet_sweep_res["other_sorts"][1][i][0] for i in range(len(floquet_sweep_res["other_sorts"][1]))])/np.pi
     #q_vals1[q_vals1<0] += 2*(drive_freqs[q_vals1<0])
     #q_vals2[q_vals2<0] += 2*(drive_freqs[q_vals2<0])
 
+    # Compute absolute difference between the two quasienergy curves
     absdifs = abs(q_vals1-q_vals2)
 
+    # For each point, take the minimum between the difference and its periodic complement
     to_fit = [min([absdifs[i], 2*(drive_freqs[i])-absdifs[i]]) for i in range(len(absdifs))]
 
+    # Define fit function: a square-root form for resonance fitting
     fit_func = lambda x, p0, p1, p2: p2*np.sqrt((x-p0)**2 + p1**2)
-    p0 = drive_freqs[np.argmin(to_fit)]
-    p1 = np.min(to_fit)
-    p2 = abs((absdifs.max() - absdifs.min())/(drive_freqs[np.argmax(to_fit)] - drive_freqs[np.argmin(to_fit)]))
+    # Initial guess for fit parameters
+    p0 = drive_freqs[np.argmin(to_fit)]  # Frequency at minimum difference
+    p1 = np.min(to_fit)                  # Minimum difference
+    p2 = abs((absdifs.max() - absdifs.min())/(drive_freqs[np.argmax(to_fit)] - drive_freqs[np.argmin(to_fit)]))  # Slope estimate
     p = [p0, p1, p2]
 
+    # Fit the difference curve to the fit function
     fit_res = opt.curve_fit(fit_func, drive_freqs, to_fit, p0 = p)
 
     print(f"Fitted Drive Frequency: {fit_res[0][0]} GHz")
     print(f"Approximate Drive Time: {1/(fit_res[0][1]*fit_res[0][2])} ns")
     
     if show_plot:
+        # Plotting section
         fig, ax1 = plt.subplots(figsize=(8, 4), dpi = 200)
 
         # Plot q_vals1 and q_vals2 on the left y-axis
@@ -177,22 +206,23 @@ def Find_Resonance(ham, drive_op, drive_freqs, epsilon, reference_states, show_p
         ax1.plot(drive_freqs, q_vals2, 's:', label="State 2", color="dodgerblue", lw = 0.5)
         #ax1.tick_params(axis="y", labelcolor="tab:blue")
 
-        # Create a twin y-axis for difs
+        # Create a twin y-axis for the difference curve
         ax2 = ax1.twinx()
         ax2.set_ylabel("Difference (GHz)", color="firebrick")
         ax2.plot(drive_freqs, to_fit, 'd:', label="Difference", color="firebrick", lw = 0.5)
 
+        # Plot the fitted curve
         x = np.linspace(drive_freqs.min(), drive_freqs.max(), 100)
         y = [fit_func(x[i], fit_res[0][0], fit_res[0][1], fit_res[0][2]) for i in range(len(x))]
         ax2.plot(x, y, color="firebrick", lw = 5, alpha = 0.2)
         ax2.tick_params(axis="y", labelcolor="tab:red")
-        
         
         ax1.legend(loc="upper right")
 
         fig.tight_layout()
         plt.title("Stark Shift Fitting")
         plt.show()
+    # Return fitted resonance frequency and approximate drive time
     return [fit_res[0][0], 1/(fit_res[0][1]*fit_res[0][2])]
 
 
@@ -232,67 +262,73 @@ def get_FLZ_flattop(H_op, drive_op, freq, epsilon, envelope_func, ramp_time, psi
         The absolute value of θr/(2π*floq_frequency)
     """
     
+    # Set default time step if not provided
     if dt == 0:
         dt = 1/freq
         
+    # Generate time samples for the ramp
     times_to_sample = np.linspace(0, ramp_time, num_t_samples)
     
+    # Generate epsilon values for each time sample if not provided
     if len(epsilons_to_sample) != len(times_to_sample):
         epsilons_to_sample = [[epsilon * envelope_func(t)] for t in times_to_sample]
     
-    # Create drive parameters for Floquet sweep
+    # Build drive parameter dictionaries for Floquet sweep
     drive_params = []
     for eps_list in epsilons_to_sample:
         drive_params.append({"epsilon": eps_list[0], "frequency": freq})
     
-    # Perform Floquet sweep using existing function
+    # Perform Floquet sweep to track states and quasienergies
     states_to_track = [psi0, psi1]
     floq_sweep_res = Floquet_Sweep(drive_params, H_op, drive_op, 
                                    reference_states=states_to_track, 
                                    sample_times=times_to_sample)
     
-    # Extract quasienergies for the final step
+    # Extract quasienergies for the final time step
     final_step_idx = len(epsilons_to_sample) - 1
     quasi_energy_0 = floq_sweep_res["other_sorts"][0][final_step_idx][0]
     quasi_energy_1 = floq_sweep_res["other_sorts"][1][final_step_idx][0]
     
+    # Calculate Floquet frequency from quasienergy difference
     floq_frequency = (quasi_energy_0 - quasi_energy_1) / (2 * np.pi)
     
-    # Get final Floquet states
+    # Get final Floquet states for both tracked states
     psi0_floq = floq_sweep_res["history"][0][final_step_idx]
     psi1_floq = floq_sweep_res["history"][1][final_step_idx]
     
-    # Create time-dependent Hamiltonian for evolution
+    # Define time-dependent drive coefficient for evolution
     drive_coef = lambda t: epsilon * envelope_func(t) * np.sin(2 * np.pi * freq * t)
     H_drive = qt.QobjEvo([H_op, [drive_op, drive_coef]])
     
-    # Solve time evolution
+    # Solve time evolution from initial state psi0
     times_evolution = np.arange(times_to_sample[0], times_to_sample[-1] + dt, dt)
     drive_res_0 = qt.sesolve(2 * np.pi * H_drive, psi0, times_evolution)
     psi0_final = drive_res_0.states[-1]
     
-    # Optimization function to minimize
+    # Define function to minimize overlap between evolved state and Floquet combination
     def to_minimize(theta):
         theta_val = theta[0] if isinstance(theta, (list, np.ndarray)) else theta
         combination = psi0_floq + np.exp(1j * theta_val) * psi1_floq
         overlap = psi0_final.dag() * combination
         return 1 - abs(overlap)**2 / 2
     
-    # Grid search for initial guess
+    # Perform grid search for initial theta guess
     thetas = np.linspace(0, 2*np.pi, n_theta_samples)
     theta_values = [to_minimize(theta) for theta in thetas]
     theta_guess = thetas[np.argmin(theta_values)]
     
-    # Optimize
+    # Refine theta using optimization
     result = opt.minimize(to_minimize, [theta_guess], method='BFGS')
     theta_opt = result.x[0]
     
-    # Calculate θr
+    # Calculate θr (relative phase)
     theta_r = np.mod(np.pi - 2 * theta_opt, 2 * np.pi)
     
+    # Print results for debugging
     print(f"floq_frequency: {floq_frequency}")
     print(f"θ: {theta_opt}, θr: {theta_r}")
     
+    # Return normalized θr value
     return abs(theta_r / (2 * np.pi * floq_frequency))
 
 
